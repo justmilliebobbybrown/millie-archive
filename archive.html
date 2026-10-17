@@ -1,0 +1,417 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0812">
+<meta name="description" content="Explore Millie Bobby Brown's career, films, television roles and biography.">
+<title>Millie Archive</title>
+<style>
+:root {
+  --bg: #0b0812;
+  --panel: #171222;
+  --purple: #bd9aff;
+  --text: #f8f5ff;
+  --muted: #b6abc7;
+  --border: #332542;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+header {
+  padding: 22px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid var(--border);
+}
+.logo { font-weight: 900; letter-spacing: 1px; }
+.logo span { color: var(--purple); }
+nav { display: flex; gap: 17px; }
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+}
+.hero {
+  padding: 85px 7%;
+  background: radial-gradient(ellipse at 80% 15%, #43265f, #1b1228 38%, var(--bg) 75%);
+}
+.eyebrow {
+  color: var(--purple);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+h1 {
+  font-size: clamp(42px, 10vw, 86px);
+  line-height: .98;
+  margin: 20px 0;
+  overflow-wrap: anywhere;
+}
+h1 span { color: var(--purple); }
+.hero p, .intro, .about p {
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 600px;
+}
+.cta {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 14px 20px;
+  background: var(--purple);
+  color: #150d20;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+}
+main { padding: 42px 7% 70px; }
+h2 { font-size: 28px; margin: 12px 0; }
+.search {
+  display: block;
+  width: 100%;
+  margin: 25px 0 16px;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: white;
+  font-size: 16px;
+}
+.search:focus { outline: 2px solid var(--purple); }
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 20px;
+}
+.filter {
+  cursor: pointer;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 10px 14px;
+  background: var(--panel);
+  color: var(--muted);
+}
+.filter.active {
+  background: var(--purple);
+  color: #150d20;
+}
+.count { color: var(--muted); font-size: 13px; margin: 15px 0; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 235px), 1fr));
+  gap: 16px;
+}
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  padding: 21px;
+  min-width: 0;
+  transition: border-color .2s, transform .2s;
+}
+.card:hover { border-color: var(--purple); transform: translateY(-3px); }
+.card .category {
+  color: var(--purple);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 10px;
+}
+.card h3 { margin: 13px 0 8px; font-size: 19px; }
+.card p { color: var(--muted); font-size: 14px; line-height: 1.75; }
+.card .year { font-size: 12px; color: var(--purple); }
+.empty { padding: 20px 0; color: var(--muted); }
+.about {
+  margin-top: 60px;
+  border: 1px solid var(--border);
+  background: linear-gradient(135deg, #241731, #13101b);
+  border-radius: 15px;
+  padding: 28px;
+}
+footer {
+  border-top: 1px solid var(--border);
+  padding: 25px 7%;
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+footer a { color: var(--purple); }
+@media(max-width:520px) {
+  header { padding: 18px 5%; }
+  nav { gap: 10px; }
+  nav a { font-size: 12px; }
+  .hero { padding: 65px 5%; }
+  main { padding: 30px 5% 55px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">MILLIE<span> ARCHIVE.</span></div>
+  <nav>
+    <a href="#archive">Archive</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">An independent fan project</div>
+  <h1>MILLIE<br><span>BOBBY BROWN.</span></h1>
+  <p>
+    Discover her screen career, memorable characters,
+    films and television appearances in one searchable archive.
+  </p>
+  <a class="cta" href="#archive">EXPLORE THE ARCHIVE ↓</a>
+</section>
+
+<main id="archive">
+  <div class="eyebrow">Explore the collection</div>
+  <h2>The Archive</h2>
+  <p class="intro">
+    Search by title, character, year or keyword. Select a category
+    to narrow down the collection.
+  </p>
+
+  <input
+    class="search"
+    id="search"
+    type="search"
+    placeholder="Search Millie, Eleven, Enola Holmes..."
+    aria-label="Search archive">
+
+  <div class="filters" id="filters">
+    <button class="filter active" data-category="All">All</button>
+    <button class="filter" data-category="Biography">Biography</button>
+    <button class="filter" data-category="Film">Films</button>
+    <button class="filter" data-category="TV">TV Shows</button>
+    <button class="filter" data-category="Character">Characters</button>
+    <button class="filter" data-category="Career">Career</button>
+  </div>
+
+  <div class="count" id="count" aria-live="polite"></div>
+  <div class="grid" id="grid"></div>
+
+  <section class="about" id="about">
+    <div class="eyebrow">About this website</div>
+    <h2>Made for the fans.</h2>
+    <p>
+      Millie Archive is an independent fan-made information project.
+      It is not affiliated with Millie Bobby Brown, Netflix or their
+      representatives.
+    </p>
+    <p>
+      Information is for general reference. Film credits and dates
+      should be checked against reliable sources. This archive is
+      continuously being developed.
+    </p>
+  </section>
+</main>
+
+<footer>
+  MILLIE ARCHIVE · 2026 · Independent fan project.
+  <br>
+  Not an official website. All trademarks belong to their respective owners.
+  <br>
+  <a href="https://www.televisionacademy.com/bios/millie-bobby-brown"
+     target="_blank" rel="noopener noreferrer">Television Academy biography</a>
+  ·
+  <a href="https://www.rottentomatoes.com/celebrity/millie_brown"
+     target="_blank" rel="noopener noreferrer">Filmography reference</a>
+</footer>
+
+<script>
+const entries = [
+  {
+    category:"Biography", title:"Date of Birth", year:"2004",
+    text:"Millie Bobby Brown was born on February 19, 2004."
+  },
+  {
+    category:"Biography", title:"Birthplace", year:"Biography",
+    text:"She was born in Marbella, Málaga, Spain."
+  },
+  {
+    category:"Biography", title:"Profession", year:"Career",
+    text:"She is an English actress and producer, known internationally for her screen roles."
+  },
+  {
+    category:"Biography", title:"Professional Name", year:"Biography",
+    text:"She is professionally known as Millie Bobby Brown."
+  },
+  {
+    category:"Career", title:"Breakthrough", year:"2016",
+    text:"Her role as Eleven in Stranger Things brought her international recognition."
+  },
+  {
+    category:"Career", title:"Emmy Recognition", year:"2017–2018",
+    text:"She received Primetime Emmy nominations for her performance in Stranger Things."
+  },
+  {
+    category:"Career", title:"TIME 100", year:"2018",
+    text:"She was included in TIME magazine's 2018 list of the 100 most influential people."
+  },
+  {
+    category:"TV", title:"Once Upon a Time in Wonderland", year:"2013",
+    text:"She played young Alice in this fantasy television series."
+  },
+  {
+    category:"TV", title:"Intruders", year:"2014",
+    text:"She played Madison O'Donnell in the television drama Intruders."
+  },
+  {
+    category:"TV", title:"NCIS", year:"2014",
+    text:"She made a guest appearance as Rachel Barnes in the crime procedural series."
+  },
+  {
+    category:"TV", title:"Grey's Anatomy", year:"2014",
+    text:"She appeared as Ruby in an episode of the medical drama."
+  },
+  {
+    category:"TV", title:"Modern Family", year:"2015",
+    text:"She appeared as Lizzie in the comedy series Modern Family."
+  },
+  {
+    category:"TV", title:"Stranger Things", year:"2016–2025",
+    text:"The science-fiction series follows a group of young people facing supernatural events in Hawkins, Indiana. Brown plays Eleven."
+  },
+  {
+    category:"Character", title:"Eleven", year:"Stranger Things",
+    text:"Eleven is a central character with psychokinetic abilities and a mysterious past."
+  },
+  {
+    category:"Character", title:"Jane Hopper", year:"Stranger Things",
+    text:"Jane Hopper is another name associated with Eleven in the series."
+  },
+  {
+    category:"Character", title:"Madison Russell", year:"MonsterVerse",
+    text:"Madison Russell is the character Brown plays in the Godzilla films."
+  },
+  {
+    category:"Character", title:"Enola Holmes", year:"Mystery",
+    text:"Enola is a young detective who uses observation and clever thinking to solve mysteries."
+  },
+  {
+    category:"Character", title:"Elodie", year:"Fantasy",
+    text:"Elodie is the central character played by Brown in Damsel."
+  },
+  {
+    category:"Film", title:"Spheres: Songs of Spacetime", year:"2018",
+    text:"Brown participated as a narrator in this virtual-reality experience."
+  },
+  {
+    category:"Film", title:"Godzilla: King of the Monsters", year:"2019",
+    text:"Brown plays Madison Russell in this monster film."
+  },
+  {
+    category:"Film", title:"Enola Holmes", year:"2020",
+    text:"Brown stars as Enola Holmes and also served as a producer."
+  },
+  {
+    category:"Film", title:"Godzilla vs. Kong", year:"2021",
+    text:"Brown returns as Madison Russell in the giant-monster crossover film."
+  },
+  {
+    category:"Film", title:"Enola Holmes 2", year:"2022",
+    text:"Enola takes on another case in this mystery sequel, with Brown reprising the lead role."
+  },
+  {
+    category:"Film", title:"Damsel", year:"2024",
+    text:"Brown plays Princess Elodie in this fantasy adventure."
+  },
+  {
+    category:"Film", title:"The Electric State", year:"2025",
+    text:"Brown plays Michelle in this science-fiction adventure film."
+  },
+  {
+    category:"Career", title:"Film Producer", year:"Career",
+    text:"Alongside acting, Brown has taken on producing roles, including on the Enola Holmes films."
+  },
+  {
+    category:"Career", title:"Music Video Appearance", year:"2016",
+    text:"She appeared in the music video for Find Me by Sigma featuring Birdy."
+  },
+  {
+    category:"Career", title:"Modeling", year:"2017",
+    text:"She took part in Calvin Klein's By Appointment campaign."
+  },
+  {
+    category:"Career", title:"TIME Recognition", year:"2018",
+    text:"Her inclusion in TIME 100 was one of the major public milestones of her early career."
+  },
+  {
+    category:"Biography", title:"Public Career", year:"Biography",
+    text:"Her public work includes television, feature films, producing and modeling."
+  }
+];
+
+const grid = document.getElementById("grid");
+const search = document.getElementById("search");
+const count = document.getElementById("count");
+const filterButtons = [...document.querySelectorAll(".filter")];
+let activeCategory = "All";
+
+function render() {
+  const term = search.value.trim().toLowerCase();
+
+  const results = entries.filter(item => {
+    const matchesCategory =
+      activeCategory === "All" || item.category === activeCategory;
+
+    const searchable =
+      `${item.title} ${item.category} ${item.year} ${item.text}`.toLowerCase();
+
+    return matchesCategory && searchable.includes(term);
+  });
+
+  count.textContent = `${results.length} entries in this view`;
+
+  if (!results.length) {
+    grid.innerHTML = '<p class="empty">No results found. Try another keyword.</p>';
+    return;
+  }
+
+  grid.innerHTML = results.map((item, index) => `
+    <article class="card">
+      <div class="category">${escapeHTML(item.category)}</div>
+      <h3>${escapeHTML(item.title)}</h3>
+      <div class="year">${escapeHTML(item.year)}</div>
+      <p>${escapeHTML(item.text)}</p>
+    </article>
+  `).join("");
+}
+
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, char => ({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#39;"
+  })[char]);
+}
+
+search.addEventListener("input", render);
+
+filterButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    activeCategory = button.dataset.category;
+    filterButtons.forEach(item => {
+      item.classList.toggle("active", item === button);
+    });
+    render();
+  });
+});
+
+render();
+</script>
+</body>
+</html>
