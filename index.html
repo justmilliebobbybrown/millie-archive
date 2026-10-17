@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Millie Archive | Fan Site</title>
+
+  <style>
+    :root {
+      --bg: #100d18;
+      --panel: #1d1728;
+      --pink: #f49ac2;
+      --purple: #a78bfa;
+      --text: #f7f2ff;
+      --muted: #c8bdd7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(
+          circle at top right,
+          #38234d 0,
+          transparent 35%
+        ),
+        var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    header {
+      padding: 52px 20px 38px;
+      text-align: center;
+      background: linear-gradient(
+        135deg,
+        #241632,
+        #171020 65%,
+        #34203d
+      );
+      border-bottom: 1px solid #4c355d;
+    }
+
+    .kicker {
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--pink);
+      font-size: 0.78rem;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      line-height: 1.05;
+      margin: 12px 0;
+      color: white;
+    }
+
+    header p {
+      max-width: 650px;
+      margin: 18px auto;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px;
+      background: #120e1bcc;
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      z-index: 5;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      padding: 8px 12px;
+      border: 1px solid #49375a;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    nav a:hover {
+      background: #382448;
+      border-color: var(--pink);
+    }
+
+    main {
+      width: min(1000px, 92%);
+      margin: 32px auto 70px;
+    }
+
+    section {
+      margin: 22px 0;
+      padding: 26px;
+      background: linear-gradient(
+        140deg,
+        #211a2d,
+        #171320
+      );
+      border: 1px solid #382b47;
+      border-radius: 20px;
+      box-shadow: 0 12px 35px #0002;
+    }
+
+    h2 {
+      color: var(--pink);
+      margin-top: 0;
+      font-size: 1.65rem;
+    }
+
+    h3 {
+      color: #d7c7ff;
+      margin-bottom: 6px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(220px, 1fr)
+      );
+      gap: 14px;
+    }
+
+    .tile {
+      padding: 17px;
+      border-radius: 14px;
+      background: #2a2038;
+      border: 1px solid #483456;
+    }
+
+    .tag {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 4px 10px;
+      background: #382448;
+      color: #ffd3e8;
+      font-size: 0.8rem;
+      margin: 3px;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: #ffc5e0;
+    }
+
+    button {
+      background: var(--pink);
+      color: #211323;
+      font-weight: bold;
+      border: 0;
+      border-radius: 12px;
+      padding: 11px 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      filter: brightness(1.07);
+    }
+
+    .quiz-question {
+      margin: 15px 0;
+      padding: 14px;
+      border: 1px solid #49375a;
+      border-radius: 12px;
+    }
+
+    label {
+      display: block;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+
+    #quiz-result {
+      font-weight: bold;
+      margin-top: 12px;
+      color: #ffd3e8;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 24px;
+      border-top: 1px solid #34283f;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="kicker">
+      Unofficial Fan-Made Website
+    </div>
+
+    <h1>Millie Archive</h1>
+
+    <p>
+      Millie Bobby Brown hakkında karakterleri,
+      projeleri ve kariyerindeki önemli durakları
+      bir araya getiren küçük bir hayran arşivi.
+    </p>
+
+    <span class="tag">Millie Bobby Brown</span>
+    <span class="tag">Stranger Things</span>
+    <span class="tag">Enola Holmes</span>
+  </header>
+
+  <nav aria-label="Ana menü">
+    <a href="#about">Millie</a>
+    <a href="#stranger">Stranger Things</a>
+    <a href="#enola">Enola Holmes</a>
+    <a href="#other">Diğer projeler</a>
+    <a href="#quiz">Mini quiz</a>
+  </nav>
+
+  <main>
+
+    <!-- MILLIE HAKKINDA -->
+
+    <section id="about">
+      <h2>Millie Bobby Brown</h2>
+
+      <p>
+        Millie Bobby Brown, İngiliz oyuncu ve yapımcıdır.
+        Dünya çapında özellikle Stranger Things dizisindeki
+        Eleven rolüyle tanındı. Daha sonra sinema projelerinde
+        yer aldı ve kendi güzellik markası Florence by Mills'i
+        kurdu.
+      </p>
+
+      <div class="grid">
+
+        <div class="tile">
+          <h3>Oyunculuk</h3>
+          <p>
+            Fantastik, gizem ve macera türlerindeki
+            projeleriyle tanınır.
+          </p>
+        </div>
+
+        <div class="tile">
+          <h3>Yapımcılık</h3>
+          <p>
+            Enola Holmes filmlerinde oyunculuğunun
+            yanında yapımcı olarak da görev aldı.
+          </p>
+        </div>
+
+        <div class="tile">
+          <h3>Florence by Mills</h3>
+          <p>
+            Gençlere yönelik güzellik ve kişisel bakım
+            ürünleri markasıdır.
+          </p>
+        </div>
+
+      </div>
+
+      <p class="note">
+        Bu site hayran yapımıdır; Millie Bobby Brown
+        veya temsilcileriyle resmî bağlantısı yoktur.
+      </p>
+    </section>
+
+
+    <!-- STRANGER THINGS -->
+
+    <section id="stranger">
+      <h2>Stranger Things — Eleven</h2>
+
+      <p>
+        Eleven (Jane Hopper), Hawkins'teki gizemlerin
+        merkezinde yer alan ve telekinetik güçlere sahip
+        bir karakterdir. Hikâyesi arkadaşlık, cesaret,
+        kimlik ve aidiyet temaları etrafında ilerler.
+      </p>
+
+      <div class="grid">
+
+        <div class="tile">
+          <h3>Karakter özellikleri</h3>
+          <p>
+            Kararlı, koruyucu ve zamanla kendi kimliğini
+            keşfeden biri.
+          </p>
+        </div>
+
+        <div class="tile">
+          <h3>Önemli bağları</h3>
+          <p>
+            Mike, Will, Max, Dustin, Lucas, Hopper ve
+            Joyce ile ilişkileri hikâyede önemli yer tutar.
+          </p>
+        </div>
+
+        <div class="tile">
+          <h3>Hawkins dünyası</h3>
+          <p>
+            Gizemli deneyler, Upside Down ve arkadaş
+            grubunun maceraları dizinin temel unsurlarıdır.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ENOLA HOLMES -->
+
+    <section id="enola">
+      <h2>Enola Holmes</h2>
+
+      <p>
+        Millie, Sherlock Holmes'un küçük kız kardeşi
+        Enola'yı canlandırır. Enola zeki, meraklı ve
+        bağımsız bir gençtir; kendi yolunu bulmak için
+        ipuçlarını takip eder ve toplumsal beklentilere
+        meydan okur.
+      </p>
+
+      <div class="grid">
+
+        <div class="tile">
+          <h3>Enola Holmes (2020)</h3>
+          <p>
+            Enola'nın kaybolan annesini ararken kendi
+            becerilerini keşfettiği macera-gizem filmi.
+          </p>
+        </div>
+
+        <div class="tile">
+          <h3>Enola Holmes 2 (2022)</h3>
+          <p>
+            Enola bu kez kendi dedektiflik işini kurar
+            ve yeni bir vakayı araştırır.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- DİĞER PROJELER -->
+
+    <section id="other">
+      <h2>Diğer projeler</h2>
+
+      <div class="grid">
+
+        <div class="tile">
+          <h3>Godzilla: King of the Monsters</h3>
+          <p>
+            Millie, Madison Russell karakterini canlandırdı.
+          </p>
+        </div>
+
+        <div class="tile">
+          <h3>Godzilla vs. Kong</h3>
+          <p>
+            Madison Russell rolüne geri döndü.
+          </p>
+        </div>
+
+        <div class="tile">
+          <h3>Damsel</h3>
+          <p>
+            Fantastik macera filminde Elodie karakterini oynadı.
+          </p>
+        </div>
+
+        <div class="tile">
+          <h3>Florence by Mills</h3>
+          <p>
+            Oyunculuk dışındaki girişimlerinden biri
+            olan güzellik markası.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- MİNİ QUIZ -->
+
+    <section id="quiz">
+      <h2>Millie mini quiz</h2>
+
+      <p>
+        Kaç soruyu doğru cevaplayabileceksin?
+      </p>
+
+      <form id="quiz-form">
+
+        <div class="quiz-question">
+          <strong>
+            1. Millie hangi dizide Eleven karakterini canlandırdı?
+          </strong>
+
+          <label>
+            <input type="radio" name="q1" value="a">
+            Wednesday
+          </label>
+
+          <label>
+            <input type="radio" name="q1" value="b">
+            Stranger Things
+          </label>
+
+          <label>
+            <input type="radio" name="q1" value="c">
+            The Witcher
+          </label>
+        </div>
+
+
+        <div class="quiz-question">
+          <strong>
+            2. Enola Holmes hangi türde bir karakterdir?
+          </strong>
+
+          <label>
+            <input type="radio" name="q2" value="a">
+            Dedektif
+          </label>
+
+          <label>
+            <input type="radio" name="q2" value="b">
+            Astronot
+          </label>
+
+          <label>
+            <input type="radio" name="q2" value="c">
+            Profesyonel futbolcu
+          </label>
+        </div>
+
+
+        <div class="quiz-question">
+          <strong>
+            3. Florence by Mills nedir?
+          </strong>
+
+          <label>
+            <input type="radio" name="q3" value="a">
+            Bir futbol takımı
+          </label>
+
+          <label>
+            <input type="radio" name="q3" value="b">
+            Bir video oyunu
+          </label>
+
+          <label>
+            <input type="radio" name="q3" value="c">
+            Bir güzellik markası
+          </label>
+        </div>
+
+        <button type="submit">
+          Cevapları kontrol et
+        </button>
+
+        <div id="quiz-result" aria-live="polite"></div>
+
+      </form>
+    </section>
+
+  </main>
+
+
+  <footer>
+    Millie Archive · Hayran yapımı bilgi sayfası ·
+    Resmî site değildir.
+  </footer>
+
+
+  <!-- QUIZ JAVASCRIPT KODU -->
+
+  <script>
+    document
+      .getElementById("quiz-form")
+      .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const answers = {
+          q1: "b",
+          q2: "a",
+          q3: "c"
+        };
+
+        let score = 0;
+
+        for (const key in answers) {
+
+          const selected = this.querySelector(
+            'input[name="' + key + '"]:checked'
+          );
+
+          if (
+            selected &&
+            selected.value === answers[key]
+          ) {
+            score++;
+          }
+        }
+
+        document.getElementById("quiz-result").textContent =
+          "3 sorudan " + score + " doğru yaptın!";
+
+      });
+  </script>
+
+</body>
+</html>
